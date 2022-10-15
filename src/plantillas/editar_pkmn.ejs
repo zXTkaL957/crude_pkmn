@@ -1,0 +1,38 @@
+<%- include ('elementos/encabezado') %>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <form action="/save/<%= data.num %>" method="post">
+                                <div class="form-group">
+                                    <input type="text" name="num" value="<%= data.num %>" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="nombre" value="<%= data.nombre %>" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="region" value="<%= data.region %>" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="tipo" value="<%= data.tipo %>"
+                                        class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="peso" value="<%= data.peso %>" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="estatura" value="<%= data.estatura %>" class="form-control">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Editar pkmn</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include ('elementos/pie') %>

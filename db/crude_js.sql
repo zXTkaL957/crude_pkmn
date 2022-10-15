@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS crudejs;
+
+USE crudejs;
+
+CREATE TABLE IF NOT EXISTS pkmn (
+    num VARCHAR(10) NOT NULL PRIMARY KEY,,
+    nombre VARCHAR(50) NOT NULL,
+    region VARCHAR(15) NOT NULL,
+    tipo VARCHAR(30),
+    peso VARCHAR(10),
+    estatura VARCHAR(10)
+);

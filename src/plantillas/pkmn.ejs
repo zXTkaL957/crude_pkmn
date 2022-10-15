@@ -1,0 +1,81 @@
+<%- include ('elementos/encabezado') %>
+
+    <div class="container">
+        <form action="/save" method="post">
+            <div class="row mt-5">
+                <form action="/add" method="post">
+                    <div class="col-md-7">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Numero Pokedex</th>
+                                    <th>Nombre</th>
+                                    <th>Región</th>
+                                    <th>Tipo</th>
+                                    <th>Peso</th>
+                                    <th>Estatura</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% if (data) { %>
+                                    <% for (var i=0; i < data.length; i++){ %>
+                                        <tr>
+                                            <td>
+                                                <%= data[i].num %>
+                                            </td>
+                                            <td>
+                                                <%= data[i].nombre %>
+                                            </td>
+                                            <td>
+                                                <%= data[i].region %>
+                                            </td>
+                                            <td>
+                                                <%= data[i].tipo %>
+                                            </td>
+                                            <td>
+                                                <%= data[i].peso %>
+                                            </td>
+                                            <td>
+                                                <%= data[i].estatura %>
+                                            </td>
+                                            <td>
+                                                <a href="/delete/<%=data[i].num%>"
+                                                    class="btn btn-danger">Eliminar</a>
+                                                <a href="/update/<%=data[i].num%>" class="btn btn-info">Editar</a>
+                                            </td>
+                                        </tr>
+                                    <% } %>
+                                <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+                <div class="col-md-5">
+                    <form action="/save" method="post">
+                        <div class="form-group">
+                            <input type="text" name="num" placeholder="Numero Pokedex" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="nombre" placeholder="Nombre" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="region" placeholder="Region" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="tipo" placeholder="Tipo" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="peso" placeholder="Peso" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="estatura" placeholder="Estatura" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-success">Guardar pkmn</button>
+                    </form>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <%- include ('elementos/pie') %>
